@@ -1,17 +1,20 @@
 import React from "react";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
 import useStyles from "./styles";
-import CartItem from './CartItem/CartItem'
-
+import CartItem from "./CartItem/CartItem";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart }) => {
-  
   const classes = useStyles();
 
   //////
   const EmptyCart = () => (
     <Typography variant="subtitle1">
-      You have currently no items in your shopping cart, start adding some!
+      You have currently no items in your shopping cart,
+      <Link to="/" className={classes.link}>
+        start adding some
+      </Link>
+      !
     </Typography>
   );
 
@@ -51,7 +54,7 @@ const Cart = ({ cart }) => {
     </>
   );
 
-  if(!cart.line_items) return 'Loading...'
+  if (!cart.line_items) return "Loading...";
 
   return (
     <Container>
@@ -60,7 +63,7 @@ const Cart = ({ cart }) => {
         {" "}
         Your Shopping Cart
       </Typography>
-      { !cart.line_items.length ? <EmptyCart /> : <FilledCart />}
+      {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </Container>
   );
 };
