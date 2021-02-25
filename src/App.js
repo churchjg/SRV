@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import { commerce } from './lib/commerce'; //completely does backend for me
-import { Products, Navbar } from './components';
+import { Products, Navbar, Cart } from './components';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -28,13 +28,14 @@ const App = () => {
         fetchCart();
     }, []);
 
-    console.log(products);
+    console.log(cart);
 
 
     return (
         <div>
-            <Navbar />
-            <Products products={products} onAddToCart={handleAddToCart}/>
+            <Navbar totalItems={cart.total_items} />
+            {/* <Products products={products} onAddToCart={handleAddToCart}/> */}
+            <Cart cart={cart} />
         </div>
     )
 }
