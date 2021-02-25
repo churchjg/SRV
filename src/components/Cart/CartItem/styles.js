@@ -1,22 +1,25 @@
   
 import { makeStyles } from '@material-ui/core/styles';
-import { borders } from '@material-ui/system';
+
 
 export default makeStyles(() => ({
   media: {
     height: 270,
     backgroundSize: 'contain',
-    backgroundColor: '#080706'
+    backgroundColor: '#080706',
+    borderRadius: 5
   },
   cardContent: {
     display: 'flex',
     justifyContent: 'space-between',
   },
-  cartActions: {
+  cardActions: {
     justifyContent: 'space-between',
   },
   buttons: {
     display: 'flex',
     alignItems: 'center',
+    border: "1px solid black",
+    borderRadius: 10
   },
 }));
