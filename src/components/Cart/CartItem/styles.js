@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(() => ({
   media: {
-    height: 270,
+    height: 250,
     backgroundSize: 'contain',
     backgroundColor: '#080706',
     borderRadius: 5
