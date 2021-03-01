@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useForm, FormProvider } from "react-hook-form";
+import { Link } from 'react-router-dom';
 
 import { commerce } from "../../lib/commerce";
 import FormInput from "./CustomTextField";
@@ -100,6 +101,11 @@ const AddressForm = ({ checkoutToken }) => {
               </Select>
             </Grid>
           </Grid>
+          <br />
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button component={Link} variant="outlined" to="/cart">Back to Cart</Button>
+            <Button type="submit" variant="contained" color="primary">Next</Button>
+          </div>
         </form>
       </FormProvider>
     </>
