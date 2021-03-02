@@ -1,4 +1,4 @@
-# Senedo ridge Vineyard
+# Senedo Ridge Vineyard
 ## Background
 
 Working with a client to build a website for a vineyard in the Shenandoah Valley, VA. *This website is currently under construction.* Projected completion is March 2021.
