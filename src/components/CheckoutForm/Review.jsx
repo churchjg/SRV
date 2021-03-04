@@ -13,6 +13,7 @@ const Review = ({ checkoutToken }) => (
           </ListItem>
         ))}
         <ListItem style={{ padding: '10px 0' }}>
+          {/* <ListItemText primary={shippingOptions.name} /> */}
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" style={{ fontWeight: 700 }}>
             {checkoutToken.live.subtotal.formatted_with_symbol}

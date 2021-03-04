@@ -15,12 +15,12 @@ import FormInput from "./CustomTextField";
 import CustomSelectField from "./CustomSelectField";
 
 const AddressForm = ({ checkoutToken, next }) => {
-  const [shippingCountries, setShippingCountries] = useState([]);
-  const [shippingCountry, setShippingCountry] = useState("");
-  const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
-  const [shippingSubdivision, setShippingSubdivision] = useState("");
-  const [shippingOptions, setShippingOptions] = useState([]);
-  const [shippingOption, setShippingOption] = useState("");
+  // const [shippingCountries, setShippingCountries] = useState([]);
+  // const [shippingCountry, setShippingCountry] = useState("");
+  // const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
+  // const [shippingSubdivision, setShippingSubdivision] = useState("");
+  // const [shippingOptions, setShippingOptions] = useState([]);
+  // const [shippingOption, setShippingOption] = useState("");
   const methods = useForm();
 
   // const countries = Object.entries(shippingCountries).map(([code, name]) => ({
@@ -30,24 +30,25 @@ const AddressForm = ({ checkoutToken, next }) => {
   // const subdivisions = Object.entries(
   //   shippingSubdivisions
   // ).map(([code, name]) => ({ id: code, label: name }));
-  const options = shippingOptions.map((sO) => ({
-    id: sO.id,
-    label: `${sO.description} - (${sO.price.formatted_with_symbol})`,
-  }));
+  // const options = shippingOptions.map((sO) => ({
+  //   id: sO.id,
+  //   label: `${sO.description} - (${sO.price.formatted_with_symbol})`,
+  // }));
 
   const stateOptions = [
     { name: "Virginia", value: "VA" },
-    // { name: 'Rio de Janeiro', value: 'rio de janeiro' },
-    // { name: 'Brasília', value: 'brasilia' },
-    // { name: 'Jundiai', value: 'jundiai' },
+    
   ];
 
   const countryOptions = [
     { name: "United States", value: "US" },
-    // { name: 'Rio de Janeiro', value: 'rio de janeiro' },
-    // { name: 'Brasília', value: 'brasilia' },
-    // { name: 'Jundiai', value: 'jundiai' },
+    
   ];
+
+  // const shippingOptions = [
+  //   { name: "Domestic", value: "Base Rate" },
+    
+  // ];
 
   // const fetchShippingCountries = async (checkoutTokenId) => {
   //   const { countries } = await commerce.services.localeListShippingCountries(
@@ -154,6 +155,13 @@ const AddressForm = ({ checkoutToken, next }) => {
               options={stateOptions}
               defaultValue="Virginia"
             />
+             {/* <CustomSelectField
+              required
+              name="shippingOption"
+              label="Shipping Options"
+              options={shippingOptions}
+              defaultValue="Domestic"
+            /> */}
             {/* <Grid item xs={12} sm={6}>
               <InputLabel>Shipping State</InputLabel>
               
