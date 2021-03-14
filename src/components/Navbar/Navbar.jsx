@@ -36,7 +36,7 @@ const location = useLocation();
             <div className={classes.grow} />
 
             {/* only show cart if on home route, will have to change to shop page */}
-            {location.pathname === '/' && (
+            {location.pathname === '/products' && (
             <div className={classes.button}>
                 <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
                     <Badge badgeContent={totalItems} color="secondary">

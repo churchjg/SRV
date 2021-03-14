@@ -3,6 +3,12 @@ import { commerce } from "./lib/commerce"; //completely does backend for me
 import { Products, Navbar, Cart, Checkout } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { CssBaseline } from '@material-ui/core';
+import Homepage from "./components/Homepage/Homepage"
+import Gallery from "./components/Gallery/Gallery";
+import Event from "./components/Events/Events"
+import Contact from "./components/Contact/Contact"
+import About from "./components/About/About"
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -74,13 +80,26 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Navbar totalItems={cart.total_items} />
+        {/* <Navbar totalItems={cart.total_items} /> */}
         <Switch>
-          <Route exact path="/">
+        <Route exact path="/">
+          <Homepage cart={cart} 
+              handleUpdateCartQty={handleUpdateCartQty}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleEmptyCart={handleEmptyCart}
+              onAddToCart={handleAddToCart}
+              totalItems={cart.total_items}/>
+        </Route>
+          <Route exact path="/products">
             {" "}
             {/*this will eventually turn into  <Route path="/products" */}
             <Products products={products} onAddToCart={handleAddToCart} />
+            <Navbar totalItems={cart.total_items} />
           </Route>
+          <Route path="/gallery" render={() => <Gallery />} exact/>
+          <Route path="/contact" render={() => <Contact />} exact/>
+          <Route path="/about" render={() => <About />} exact/>
+          <Route path="/event" render={() => <Event />} exact />
           <Route exact path="/cart">
             <Cart
               cart={cart}
