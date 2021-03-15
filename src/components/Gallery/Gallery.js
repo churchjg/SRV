@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
@@ -65,6 +66,16 @@ const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: "56.25%", // 16:9
   },
+  cardMedia1: {
+    paddingTop: "56.25%", // 16:9
+    overflow: "auto",
+  },
+
+  modalButton: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+  },
 
   cardContent: {
     flexGrow: 1,
@@ -73,19 +84,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
-  
 }));
 
-const image = ((e) => ({
-  bigImage: {
-    flex: 5,
-}
-}));
-
-
+Modal.setAppElement("#root");
 
 export default function Gallery() {
   const classes = useStyles();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
     <React.Fragment>
@@ -97,9 +102,7 @@ export default function Gallery() {
             className={classes.header}
             variant="h6"
             color="default"
-            noWrap
-            
-          >
+            noWrap>
             Senedo Ridge Vineyard
           </Typography>
         </Toolbar>
@@ -113,16 +116,14 @@ export default function Gallery() {
               variant="h2"
               align="center"
               color="textPrimary"
-              gutterBottom
-            >
+              gutterBottom>
               Senedo Ridge Vineyard Gallery
             </Typography>
             <Typography
               variant="h5"
               align="center"
               color="textSecondary"
-              paragraph
-            >
+              paragraph>
               Having owned a part-time photography business in the 1990s, Jon
               still loves to snap pictures around the Vineyard. This gallery has
               a lot of his favorites, as well as some contributions from friends
@@ -140,7 +141,7 @@ export default function Gallery() {
                 </Grid>
                 <Grid item>
                   <Button variant="outlined" color="default">
-                  <Link color="inherit" href="/contact">
+                    <Link color="inherit" href="/contact">
                       Contact Us
                     </Link>
                   </Button>
@@ -172,9 +173,55 @@ export default function Gallery() {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary" onClick={image.bigImage}>
+                  <Button
+                    onClick={() => setModalIsOpen(true)}
+                    size="small"
+                    color="primary"
+                    variant="contained">
                     View
                   </Button>
+                  <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    style={{
+                      overlay: {
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: "rgba(200, 200, 200, .75)",
+                      },
+                      content: {
+                        position: "absolute",
+                        top: 100,
+                        left: 100,
+                        right: 100,
+                        bottom: 100,
+                        border: "1px solid #ccc",
+                        background: "#fff",
+                        overflow: "auto",
+                        WebkitOverflowScrolling: "touch",
+                        borderRadius: "4px",
+                        outline: "none",
+                        padding: "20px",
+                      },
+                    }}>
+                    <CardMedia
+                      className={classes.cardMedia1}
+                      image="https://i.imgur.com/6EqeGER.jpg"
+                      title="Misty Western View"
+                    />
+                    <div className={classes.modalButton}>
+                      <Button
+                        variant="contained"
+                        color="default"
+                        
+                        onClick={() => setModalIsOpen(false)}>
+                        CLOSE
+                      </Button>
+                    </div>
+                  </Modal>
                 </CardActions>
               </Card>
             </Grid>
@@ -195,7 +242,10 @@ export default function Gallery() {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary" onClick={makeStyles.viewImage}>
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={makeStyles.viewImage}>
                     View
                   </Button>
                 </CardActions>
@@ -449,8 +499,7 @@ export default function Gallery() {
           variant="subtitle1"
           align="center"
           color="textSecondary"
-          component="p"
-        >
+          component="p">
           Estate Grown & Operated
         </Typography>
         <Copyright />
