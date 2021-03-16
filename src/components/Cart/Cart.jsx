@@ -39,7 +39,89 @@ const Cart = ({
       </Grid>
 
       <div className={classes.cardDetails}>
-        <Typography variant="h4">
+        {/* <Typography variant="h4">
+          Subtotal: {cart.subtotal.formatted_with_symbol}
+          <div className={classes.taxes}>
+            <Typography variant="subtitle1">
+              All prices include shipping, handling, and taxes.
+            </Typography>
+          </div>
+        </Typography>
+
+        <div>
+          <Button
+            component={Link}
+            to="/products"
+            className={classes.emptyButton}
+            size="large"
+            type="button"
+            variant="outlined"
+            color="inherit">
+            Back To Store
+          </Button>
+          <Button
+            className={classes.emptyButton}
+            size="large"
+            type="button"
+            variant="contained"
+            color="secondary"
+            onClick={handleEmptyCart}>
+            Empty Cart
+          </Button>
+          <Button
+            component={Link}
+            to="/checkout"
+            className={classes.checkoutButton}
+            size="large"
+            type="button"
+            variant="contained"
+            color="primary">
+            Checkout
+          </Button>
+        </div> */}
+      </div>
+    </>
+  );
+
+  if (!cart.line_items) return "Loading...";
+
+  return (
+    <Container>
+      <div className={classes.toolbar} />
+      <Typography
+        className={classes.warning}
+        variant="body1"
+        align="center"
+        position="fixed"
+        >
+        {" "}
+        *Please Note: We are currently only authorized to ship to locations in
+        Virginia at this time.
+      </Typography>
+      <Typography
+        className={classes.warning2}
+        variant="subtitle1"
+        align="center"
+        gutterBottom>
+        {" "}
+        All purchases must be made by individuals 21 and over, per federal and
+        state laws.
+      </Typography>
+      
+
+      <Typography
+        className={classes.title}
+        variant="h3"
+        align="center"
+        gutterBottom>
+        {" "}
+        Shopping Cart
+      </Typography>
+      {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
+
+      <div className={classes.cardDetails}>
+      <footer className={classes.footerCart}>
+      <Typography variant="h5">
           Subtotal: {cart.subtotal.formatted_with_symbol}
           <div className={classes.taxes}>
             <Typography variant="subtitle1">
@@ -79,44 +161,8 @@ const Cart = ({
             Checkout
           </Button>
         </div>
+      </footer>
       </div>
-    </>
-  );
-
-  if (!cart.line_items) return "Loading...";
-
-  return (
-    <Container>
-      <div className={classes.toolbar} />
-      <Typography
-        className={classes.warning}
-        variant="body1"
-        align="center"
-        gutterBottom>
-        {" "}
-        *Please Note: We are currently only authorized to ship to addresses in
-        Virginia at this time.
-      </Typography>
-      <Typography
-        className={classes.warning2}
-        variant="subtitle1"
-        align="center"
-        gutterBottom>
-        {" "}
-        All purchases must be made by individuals 21 and over, per federal and
-        state laws.
-      </Typography>
-      
-
-      <Typography
-        className={classes.title}
-        variant="h3"
-        align="center"
-        gutterBottom>
-        {" "}
-        Your Shopping Cart
-      </Typography>
-      {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </Container>
   );
 };

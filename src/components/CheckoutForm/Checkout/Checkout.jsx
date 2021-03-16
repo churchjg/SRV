@@ -15,6 +15,7 @@ import useStyles from "./styles";
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
 import { commerce } from '../../../lib/commerce';
+import LockIcon from "@material-ui/icons/Lock";
 
 //////////end imports
 
@@ -105,8 +106,11 @@ if (error) {
       <div className={classes.toolbar} />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
+          
           <Typography variant="h4" align="center">
+          
             Checkout
+            <LockIcon className={classes.secureCheckout}/>
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map((step) => (

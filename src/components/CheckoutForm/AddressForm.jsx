@@ -14,6 +14,11 @@ import { commerce } from "../../lib/commerce";
 import FormInput from "./CustomTextField";
 import CustomSelectField from "./CustomSelectField";
 
+const Warning = () => (
+  <>
+  </>
+)
+
 const AddressForm = ({ checkoutToken, next }) => {
   // const [shippingCountries, setShippingCountries] = useState([]);
   // const [shippingCountry, setShippingCountry] = useState("");
@@ -112,6 +117,17 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   return (
     <>
+    <div>
+    <Typography
+        variant="body1"
+        align="center"
+        position="fixed"
+        >
+        {" "}
+        *Please Note: We are currently only authorized to ship to locations in
+        Virginia at this time.
+      </Typography>
+      </div>
     
       <Typography variant="h6" gutterBottom>
         Shipping Address

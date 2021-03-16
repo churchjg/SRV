@@ -49,4 +49,8 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  secureCheckout: {
+    marginLeft: "2%",
+    
+  }
 }));

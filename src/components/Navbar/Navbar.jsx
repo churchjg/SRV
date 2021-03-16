@@ -59,7 +59,20 @@ const Navbar = ({ totalItems }) => {
           {location.pathname === "/cart" && (
             <div className={classes.button}>
               
-              <IconButton color="inherit">
+              <IconButton color="inherit" component={Link}
+                to="/checkout">
+                <Typography variant="subtitle1" color="textPrimary" className={classes.secure}>Secure Checkout</Typography>
+                <LockIcon className={classes.secureButton} />
+                
+                
+              </IconButton>
+            </div>
+          )}
+          {location.pathname === "/checkout" && (
+            <div className={classes.button}>
+              
+              <IconButton color="inherit" component={Link}
+                to="/checkout">
                 <Typography variant="subtitle1" color="textPrimary" className={classes.secure}>Secure Checkout</Typography>
                 <LockIcon className={classes.secureButton} />
                 

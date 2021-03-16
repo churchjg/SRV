@@ -1,14 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  
   toolbar: theme.mixins.toolbar,
   title: {
     marginTop: '2%',
     marginBottom: '3%',
-    
+    fontFamily: "Calibri"
   },
   emptyButton: {
     minWidth: '150px',
+    margin: '10px',
+    opacity: "1",
     [theme.breakpoints.down('xs')]: {
       marginBottom: '5px',
     },
@@ -18,6 +21,8 @@ export default makeStyles((theme) => ({
   },
   checkoutButton: {
     minWidth: '150px',
+    margin: '10px',
+    opacity: "1",
   },
   link: {
     textDecoration: 'none',
@@ -32,7 +37,8 @@ export default makeStyles((theme) => ({
     marginTop: '1%',
     fontStyle: "italic",
     align: "center",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    position: "sticky"
   },
   warning2: {
     fontStyle: "italic",
@@ -45,5 +51,23 @@ export default makeStyles((theme) => ({
     width: '100%',
     fontStyle: 'italic',
     align: "left"
-  }
+  },
+
+  footerCart: {
+    display: 'flex',
+    marginTop: '-10%',
+    marginBottom: '7%',
+    marginLeft: "-5%",
+    width: '75%',
+    justifyContent: 'space-between',
+    position: "fixed",
+    opacity: ".9",
+    borderRadius: "25px",
+    background: "#e6e6e6",
+    padding: "20px",
+    
+    
+    
+  },
+
 }));
