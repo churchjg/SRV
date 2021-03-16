@@ -10,6 +10,8 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import { Route, Redirect, Switch } from "react-router-dom";
 import "./contact.css"
+import { Icon, InlineIcon } from '@iconify/react';
+import contactCard24Regular from '@iconify-icons/fluent/contact-card-24-regular';
 
 
 function Copyright() {
@@ -41,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Belluccia",
     fontSize: "25px",
     align: "center",
+    marginLeft: "1%"
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -79,6 +82,7 @@ export default function Contact() {
       <CssBaseline />
       <AppBar position="relative" color="default">
         <Toolbar className={classes.headbackground}>
+        <Icon icon={contactCard24Regular} color="white" height="3em" />
           <Typography
             className={classes.header}
             variant="h6"

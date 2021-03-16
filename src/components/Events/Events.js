@@ -16,6 +16,15 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 // import { Route, Redirect, Switch } from "react-router-dom";
 
+
+
+
+
+// npm install --save-dev @iconify/react @iconify-icons/emojione
+import { Icon, InlineIcon } from '@iconify/react';
+import partyPopper from '@iconify-icons/emojione/party-popper';
+
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -42,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontFamily: "Belluccia",
     fontSize: "25px",
+    marginLeft: "1%"
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -95,16 +105,16 @@ export default function Event() {
       <CssBaseline />
       <AppBar position="relative" color="default">
         <Toolbar className={classes.headbackground}>
-          
+        <Icon icon={partyPopper} height="3em"/>
           <Typography
             className={classes.header}
             variant="h6"
             color="default"
             noWrap
-            
           >
             Senedo Ridge Vineyard Events
           </Typography>
+          
         </Toolbar>
       </AppBar>
       <main>

@@ -15,7 +15,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import { Route, Redirect, Switch } from "react-router-dom";
-
+import { Icon, InlineIcon } from "@iconify/react";
+import bottleWine from "@iconify-icons/mdi/bottle-wine";
+import Tilt from "react-parallax-tilt";
 
 function Copyright() {
   return (
@@ -33,12 +35,11 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   icon: {
-    marginRight: theme.spacing(2),
+    marginRight: "1%",
     color: "white",
   },
   headbackground: {
     backgroundColor: "#212529",
-    marginTop: "-35px"
   },
   header: {
     color: "white",
@@ -83,15 +84,14 @@ export default function About() {
       <CssBaseline />
       <AppBar position="relative" color="default">
         <Toolbar className={classes.headbackground}>
-          
-          <Typography
-            className={classes.header}
-            variant="h6"
-            color="default"
-            noWrap
-          >
-            Senedo Ridge Vineyard
-          </Typography>
+              <Icon icon={bottleWine} color="white" height="3em" />
+              <Typography
+                className={classes.header}
+                variant="h6"
+                color="default"
+                noWrap>
+                Senedo Ridge Vineyard
+              </Typography>
         </Toolbar>
       </AppBar>
       <main>
@@ -103,17 +103,19 @@ export default function About() {
               variant="h3"
               align="center"
               color="textPrimary"
-              gutterBottom
-            >
-        About Us
+              gutterBottom>
+              About Us
             </Typography>
             <Typography
               variant="h5"
               align="center"
               color="textSecondary"
-              paragraph
-            >
-              Senedo Ridge is family owned and operated by the Church family. Our wine is estate grown and produced among the foothills of the Shenandoah Valley. The Vineyard operates on two acres of a sloping mountainside with high quality, clay-based soil that helps to produce complex Red Wines. 
+              paragraph>
+              Senedo Ridge is family owned and operated by the Church family.
+              Our wine is estate grown and produced among the foothills of the
+              Shenandoah Valley. The Vineyard operates on two acres of a sloping
+              mountainside with high quality, clay-based soil that helps to
+              produce complex Red Wines.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -127,14 +129,14 @@ export default function About() {
                 </Grid>
                 <Grid item>
                   <Button variant="contained" color="default">
-                  <Link color="inherit" href="/contact">
+                    <Link color="inherit" href="/contact">
                       Contact Us
                     </Link>
                   </Button>
                 </Grid>
                 <Grid item>
                   <Button variant="contained" color="default">
-                  <Link color="inherit" href="/products">
+                    <Link color="inherit" href="/products">
                       Wine Store
                     </Link>
                   </Button>
@@ -158,13 +160,9 @@ export default function About() {
                   <Typography gutterBottom variant="h5" component="h2">
                     The Beginning
                   </Typography>
-                  <Typography>
-                    
-                  </Typography>
+                  <Typography></Typography>
                 </CardContent>
-                <CardActions>
-                  
-                </CardActions>
+                <CardActions></CardActions>
               </Card>
             </Grid>
             <Grid item xs={12} sm={3} md={6}>
@@ -176,15 +174,11 @@ export default function About() {
                 />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
-                   Where We Are Now
+                    Where We Are Now
                   </Typography>
-                  <Typography>
-                    
-                  </Typography>
+                  <Typography></Typography>
                 </CardContent>
-                <CardActions>
-                  
-                </CardActions>
+                <CardActions></CardActions>
               </Card>
             </Grid>
           </Grid>
@@ -199,8 +193,7 @@ export default function About() {
           variant="subtitle1"
           align="center"
           color="textSecondary"
-          component="p"
-        >
+          component="p">
           Estate Grown & Operated
         </Typography>
         <Copyright />
