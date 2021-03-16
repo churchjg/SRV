@@ -19,7 +19,8 @@ export default makeStyles((theme) => ({
   },
   image: {
     marginRight: '10px',
-    marginLeft: '20px'
+    marginLeft: '20px',
+    borderRadius: "15%"
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -65,5 +66,13 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
+  },
+  secure: {
+    marginRight: "10px",
+    paddingTop: "3px",
+    fontWeight: "bold",
+  },
+  secureButton: {
+    marginRight: "50px"
   },
 }));

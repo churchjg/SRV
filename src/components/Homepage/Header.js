@@ -4,25 +4,27 @@ import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
-// import SearchIcon from "@material-ui/icons/Search";
 import Typography from "@material-ui/core/Typography";
 import { useLocation } from "react-router-dom";
-import { ShoppingCart } from "@material-ui/icons";
-import { Badge, CssBaseline } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
 import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
-    borderBottom: `2px solid ${theme.palette.divider}`,
-    marginTop: "10px",
+    borderBottom: `3px solid ${theme.palette.divider}`,
+    marginTop: "1%",
+    
     [theme.breakpoints.down('xs')]: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        marginTop: "5%",
     },
     [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        marginTop: "5%",
     },
     [theme.breakpoints.down('md')]: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        marginTop: "5%",
     }
   },
   club: {
@@ -53,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
   toolbarSecondary: {
     justifyContent: "space-between",
     overflowX: "auto",
+    
     [theme.breakpoints.down('xs')]: {
         flexDirection: 'column',
         
@@ -98,12 +101,9 @@ export default function Header(props, {totalItems} ) {
     <React.Fragment>
     <CssBaseline />
       <Toolbar className={classes.toolbar}>
-        <Button className={classes.club} variant="outlined" size="small">
-          Join Our Wine Club
-        </Button>
         <Typography
           component="h1"
-          variant="h2"
+          variant="h1"
           color="inherit"
           align="center"
           noWrap
@@ -111,20 +111,6 @@ export default function Header(props, {totalItems} ) {
           {title}
         </Typography>
         
-        {location.pathname === '/' && (
-            
-            <div className={classes.cartButton}>
-            <IconButton href="/cart" aria-label="Show cart items" color="inherit">
-                <Badge badgeContent={totalItems} color="secondary">
-                    <ShoppingCart />
-                </Badge>
-            </IconButton>
-        </div>
-            
-            )}
-        <Button variant="outlined" size="small">
-          Sign In
-        </Button>
       </Toolbar>
       <Toolbar
         component="nav"
@@ -135,7 +121,7 @@ export default function Header(props, {totalItems} ) {
             color="inherit"
             noWrap
             key={section.title}
-            variant="subtitle1"
+            variant="h5"
             href={section.url}
             className={classes.toolbarLink}>
             {section.title}

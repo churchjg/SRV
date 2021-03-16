@@ -25,29 +25,34 @@
     margin-bottom: 10px;
     background: rgba(22, 63, 90, 0.8);
     color: #fff;
-    transition: .5s ease all
+    transition: .5s ease all;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #contact-form input::-webkit-input-placeholder,
 #contact-form textarea::-webkit-input-placeholder {
-    color: #fff
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #contact-form input:-moz-placeholder,
 #contact-form textarea:-moz-placeholder {
     color: #fff;
-    opacity: 1
+    opacity: 1;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #contact-form input::-moz-placeholder,
 #contact-form textarea::-moz-placeholder {
     color: #fff;
-    opacity: 1
+    opacity: 1;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #contact-form input:-ms-input-placeholder,
 #contact-form textarea:-ms-input-placeholder {
-    color: #fff
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #contact-form input:focus,

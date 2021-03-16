@@ -112,6 +112,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   return (
     <>
+    
       <Typography variant="h6" gutterBottom>
         Shipping Address
       </Typography>
@@ -125,6 +126,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             <FormInput name="firstName" label="First Name" />
             <FormInput name="lastName" label="Last Name" />
             <FormInput name="address1" label="Address" />
+            <FormInput name="phone" label="Phone" />
             <FormInput name="email" label="Email" />
             <FormInput name="city" label="City" />
             <FormInput name="zip" label="ZIP / Postal code" />

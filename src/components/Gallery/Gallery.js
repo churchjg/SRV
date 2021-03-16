@@ -177,7 +177,7 @@ export default function Gallery() {
                     Misty Western View
                   </Typography>
                   <Typography>
-                    The front of Senedo Ridge's property faces East towards West
+                    The front of Senedo Ridge's property faces West towards West
                     Virginia. In the distance you can get a picturesque view of
                     the Appalachian Mountains, made even better after a
                     thunderstorm
@@ -241,14 +241,14 @@ export default function Gallery() {
                 <CardMedia
                   className={classes.cardMedia}
                   image="https://i.imgur.com/clYDfsW.jpg"
-                  title="Buck Mountain Snow Day"
+                  title="Buck Head Mountain Snow Day"
                 />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Buck Mountain Snow Day
+                    Buck Head Mountain Snow Day
                   </Typography>
                   <Typography>
-                    Here is our neighboring mountain, Buck Mountain, on a snowy
+                    Here is our neighboring mountain, Buck Head Mountain, on a snowy
                     December day.
                   </Typography>
                 </CardContent>
@@ -291,7 +291,7 @@ export default function Gallery() {
                       className={classes.cardMedia1}
                       id="Snow Day"
                       image="https://i.imgur.com/clYDfsW.jpg"
-                      title="Buck Mountain Snow Day"
+                      title="Buck Head Mountain Snow Day"
                     />
                     <div className={classes.modalButton}>
                       <Button
@@ -310,11 +310,11 @@ export default function Gallery() {
                 <CardMedia
                   className={classes.cardMedia}
                   image="https://i.imgur.com/KttNoOC.jpg"
-                  title="Buck Mountain Smokey"
+                  title="Buck Head Mountain Smokey"
                 />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Buck Mountain Smokey
+                    Buck Head Mountain Smokey
                   </Typography>
                   <Typography>
                     Buck Mountain seen again, just before a spring storm rolls
@@ -359,7 +359,7 @@ export default function Gallery() {
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/KttNoOC.jpg"
-                      title="Buck Mountain Smokey"
+                      title="Buck Head Mountain Smokey"
                     />
                     <div className={classes.modalButton}>
                       <Button

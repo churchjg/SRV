@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-
+import Modal from "react-modal";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -62,6 +62,16 @@ const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: "56.25%", // 16:9
   },
+  cardMedia1: {
+    paddingTop: "56.25%", // 16:9
+    overflow: "auto",
+  },
+
+  modalButton: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+  },
 
   cardContent: {
     flexGrow: 1,
@@ -73,10 +83,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+Modal.setAppElement("#root");
  
 
 export default function Event() {
   const classes = useStyles();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
     <React.Fragment>
@@ -89,6 +101,7 @@ export default function Event() {
             variant="h6"
             color="default"
             noWrap
+            
           >
             Senedo Ridge Vineyard Events
           </Typography>
@@ -126,7 +139,7 @@ export default function Event() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="default">
+                  <Button variant="outlined" color="default" href="/contact">
                     Contact Us
                   </Button>
                 </Grid>
@@ -143,20 +156,66 @@ export default function Event() {
                 <CardMedia
                   className={classes.cardMedia}
                   image="https://i.imgur.com/SbgtmjG.jpg"
-                  title="Image title"
+                  title="Wine & Pizza"
                 />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Wine & Pizza Night — 04/17/2021
                   </Typography>
                   <Typography>
-                  Join us and bring your friends for a Wine & Pizza night! Our pizza is made by an Italian chef and baked in a wood fire oven. Enjoy amazing scenic Sign Ups while you enjoy the greatest pairing on Earth — WINE & PIZZA
+                  Join us and bring your friends for a Wine & Pizza night! Our pizza is made by an Italian chef and baked in a wood fire oven. Enjoy amazing scenic views while you enjoy the greatest pairing on Earth — WINE & PIZZA
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary">
-                    Sign Up
+                  <Button
+                    onClick={() => setModalIsOpen(true)}
+                    size="small"
+                    color="primary"
+                    variant="outlined">
+                    RSVP
                   </Button>
+                  <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    style={{
+                      overlay: {
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: "rgba(200, 200, 200, .75)",
+                      },
+                      content: {
+                        position: "absolute",
+                        top: 100,
+                        left: 200,
+                        right: 200,
+                        bottom: 100,
+                        border: "1px solid #ccc",
+                        background: "#fff",
+                        overflow: "auto",
+                        WebkitOverflowScrolling: "touch",
+                        borderRadius: "4px",
+                        outline: "none",
+                        padding: "20px",
+                      },
+                    }}>
+                    <CardMedia
+                      className={classes.cardMedia1}
+                      id="Misty"
+                      image="https://i.imgur.com/6EqeGER.jpg"
+                      title="Misty Western View"
+                    />
+                    <div className={classes.modalButton}>
+                      <Button
+                        variant="contained"
+                        color="default"
+                        onClick={() => setModalIsOpen(false)}>
+                        CLOSE
+                      </Button>
+                    </div>
+                  </Modal>
                 </CardActions>
               </Card>
             </Grid>

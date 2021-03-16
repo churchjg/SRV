@@ -134,7 +134,7 @@ export default function About() {
                 </Grid>
                 <Grid item>
                   <Button variant="contained" color="default">
-                  <Link color="inherit" href="/wine">
+                  <Link color="inherit" href="/products">
                       Wine Store
                     </Link>
                   </Button>

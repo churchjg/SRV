@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(2),
   },
-  Header: {
-      
-  }
   
 }));
 
@@ -31,10 +28,9 @@ const mainFeaturedPost = {
   title: "Senedo Ridge Vineyard",
   description:
     "Senedo Ridge Vineyard was founded in 2016 by the Church Family. It remains family owned and operated today.",
-
   image: "https://i.imgur.com/hRMV0G1.jpg",
   imgText: "main image description",
-  linkText: "Browse Wines",
+//   linkText: "Browse Wines",
 };
 
 
@@ -48,7 +44,7 @@ export default function Homepage({cart, totalItems}) {
       <CssBaseline />
 
       <Container maxWidth="100%">
-        <Header className="Header" title="Senedo Ridge Vineyard" sections={sections} cart={cart} totalItems={totalItems} />
+        <Header  title="Senedo Ridge Vineyard" sections={sections}  />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
         </main>

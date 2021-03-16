@@ -47,7 +47,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, order_id
         <Review checkoutToken={checkoutToken} />
         <Divider />
         <Typography variant="h6" gutterBottom style={{ margin: '20px 0' }}>Payment Method</Typography>
-        <Elements stripe={stripePromise}>
+        <Elements stripe={stripePromise} >
           <ElementsConsumer>{({ elements, stripe }) => (
             <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
               <CardElement />

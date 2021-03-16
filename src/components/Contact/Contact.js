@@ -106,12 +106,12 @@ export default function Contact() {
               variant="h5"
               align="center"
               color="textSecondary"
+              display="block"
               paragraph
             >
               To get in contact with Senedo Ridge Vineyard, please fill out the
               form below. We welcome any feedback, questions, or memories that
-              you have with us. Please leave your email in the form and we will reach
-              out as quickly as possible.
+              you have. 
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
