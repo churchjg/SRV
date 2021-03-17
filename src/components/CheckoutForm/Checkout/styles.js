@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   appBar: {
     position: 'relative',
+    width: "100%"
   },
   toolbar: theme.mixins.toolbar,
   layout: {
@@ -52,5 +53,45 @@ export default makeStyles((theme) => ({
   secureCheckout: {
     marginLeft: "2%",
     
-  }
+  },
+  warning: {
+    fontStyle: "italic",
+    marginTop: "2%",
+    marginBottom: "-3%",
+    [theme.breakpoints.down("xs")]: {
+      display: "flex",
+      flexDirection: "column",
+      marginTop: "1px",
+      width: "100%",
+      justifyContent: "space-between",
+      position: "relative",
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      flexDirection: "column",
+      marginTop: "1px",
+      width: "100%",
+      justifyContent: "space-between",
+      position: "relative",
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      flexDirection: "column",
+      marginTop: "1px",
+      width: "100%",
+      justifyContent: "space-between",
+      position: "relative",
+    },
+    [theme.breakpoints.down("lg")]: {
+      display: "flex",
+      flexDirection: "column",
+      marginTop: "15%",
+      marginBottom: "-10%",
+      marginLeft: "12%",
+      fontSize: "12px",
+      width: "70%",
+      justifyContent: "space-between",
+      position: "relative",
+    },
+  },
 }));
