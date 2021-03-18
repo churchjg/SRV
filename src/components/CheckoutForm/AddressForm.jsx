@@ -6,6 +6,8 @@ import {
   Button,
   Grid,
   Typography,
+  Checkbox,
+  FormControlLabel,
 } from "@material-ui/core";
 import { useForm, FormProvider } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -28,13 +30,6 @@ const AddressForm = ({ checkoutToken, next }) => {
   // const [shippingOption, setShippingOption] = useState("");
   const methods = useForm();
   const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2000-04-17T21:11:54")
-  );
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
 
   // const countries = Object.entries(shippingCountries).map(([code, name]) => ({
   //   id: code,
@@ -51,6 +46,8 @@ const AddressForm = ({ checkoutToken, next }) => {
   const stateOptions = [{ name: "Virginia", value: "VA" }];
 
   const countryOptions = [{ name: "United States", value: "US" }];
+
+  const shippingOptions = [{ name: "Domestic ($3.00)", value: "Domestic" }];
 
   // const shippingOptions = [
   //   { name: "Domestic", value: "Base Rate" },
@@ -130,19 +127,6 @@ const AddressForm = ({ checkoutToken, next }) => {
               <FormInput name="address1" label="Address" />
               <FormInput name="phone" label="Phone" />
               <FormInput name="email" label="Email" />
-              <KeyboardDatePicker
-                className={classes.birthday}
-                margin="normal"
-                id="date-picker-dialog"
-                label="Birthday"
-                format="MM/dd/yyyy"
-                defaultValue="yyyy-mm-dd"
-                onChange={handleDateChange}
-                required
-                KeyboardButtonProps={{
-                  "aria-label": "change date",
-                }}
-              />
               <FormInput name="city" label="City" />
               <FormInput name="zip" label="ZIP / Postal code" />
               {/* <Grid item xs={12} sm={6}>
@@ -171,6 +155,13 @@ const AddressForm = ({ checkoutToken, next }) => {
                 label="Shipping State"
                 options={stateOptions}
                 defaultValue="Virginia"
+              />
+              <CustomSelectField
+                required
+                name="shippingOptions"
+                label="Shipping Options"
+                options={shippingOptions}
+                defaultValue="Domestic"
               />
               {/* <CustomSelectField
               required
@@ -206,7 +197,34 @@ const AddressForm = ({ checkoutToken, next }) => {
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                paddingTop: "40px",
+                paddingTop: "10%",
+                paddingBottom: "5%",
+                marginLeft: "2%",
+                fontFamily: "Calibri",
+                fontWeight: "bold",
+                width: "100%"
+              }}>
+              <FormControlLabel
+                value="I certify that I am at least 21 years old."
+                control={<Checkbox required color="primary" />}
+                label={
+                  <Typography
+                    className={classes.age}
+                    variant="body1"
+                    color="textPrimary">
+                    By checking the box, I affirm that I am 21 years of age or
+                    older. An adult (21+) signature is required to accept all
+                    wine shipments.
+                  </Typography>
+                }
+                labelPlacement="end"
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingTop: "5%",
               }}>
               <Button component={Link} variant="outlined" to="/cart">
                 Back to Cart

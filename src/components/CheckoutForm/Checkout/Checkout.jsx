@@ -126,7 +126,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         className={classes.warning}
         variant="h6"
         align="center"
-        position="fixed">
+        position="absolute">
         {" "}
         *Please Note: We are currently only authorized to ship to locations in
         Virginia at this time.
