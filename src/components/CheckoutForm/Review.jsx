@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, List, ListItem, ListItemText } from '@material-ui/core';
 
 
-const Review = ({ checkoutToken }) => (
+const Review = ({ checkoutToken, liveCart }) => (
     <>
       <Typography variant="h6" gutterBottom>Order Summary</Typography>
       <List disablePadding>
@@ -10,13 +10,23 @@ const Review = ({ checkoutToken }) => (
           <ListItem style={{ padding: '10px 0' }} key={product.name}>
             <ListItemText primary={product.name} secondary={`Quantity: ${product.quantity}`} />
             <Typography variant="body2">{product.line_total.formatted_with_symbol}</Typography>
+
           </ListItem>
         ))}
+        {liveCart.discount.length !== 0 ? (
+                <ListItem style={{padding: '10px 0'}}>
+                    <ListItemText primary="Discount" />
+                    <Typography variant='subtitle1' style={{fontWeight: 700}}>
+                        - {liveCart.discount.amount_saved.formatted_with_symbol}
+                    </Typography>
+                </ListItem>) : ""
+                }
+
         <ListItem style={{ padding: '10px 0' }}>
           {/* <ListItemText primary={shippingOptions.name} /> */}
           <ListItemText primary="Total" secondary="*All prices include shipping, handling, and taxes." />        
           <Typography variant="subtitle1" style={{ fontWeight: 700 }}>
-            {checkoutToken.live.subtotal.formatted_with_symbol}
+            {liveCart.total.formatted_with_symbol}
           </Typography>
         </ListItem>
         

@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce"; //completely does backend for me
 import { Products, Navbar, Cart, Checkout } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CssBaseline } from '@material-ui/core';
-import Homepage from "./components/Homepage/Homepage"
+import { CssBaseline } from "@material-ui/core";
+import Homepage from "./components/Homepage/Homepage";
 import Gallery from "./components/Gallery/Gallery";
-import Event from "./components/Events/Events"
-import Contact from "./components/Contact/Contact"
-import About from "./components/About/About"
-
+import Event from "./components/Events/Events";
+import Contact from "./components/Contact/Contact";
+import About from "./components/About/About";
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -54,16 +54,22 @@ const App = () => {
     const newCart = await commerce.cart.refresh();
 
     setCart(newCart);
-    };
+  };
+
   
 
   const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
     try {
-      const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
+      const incomingOrder = await commerce.checkout.capture(
+        checkoutTokenId,
+        newOrder
+      );
 
       setOrder(incomingOrder);
-
+      
       refreshCart();
+
+      
     } catch (error) {
       setErrorMessage(error.data.error.message);
     }
@@ -73,27 +79,26 @@ const App = () => {
   useEffect(() => {
     fetchProducts();
     fetchCart();
+    // fetchLiveCart();
   }, []);
-
-
 
   return (
     <Router>
       <div>
         {/* <Navbar totalItems={cart.total_items} /> */}
         <Switch>
-        <Route exact path="/">
-          <Homepage />
-        </Route>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
           <Route exact path="/products">
             {" "}
             {/*this will eventually turn into  <Route path="/products" */}
             <Products products={products} onAddToCart={handleAddToCart} />
             <Navbar totalItems={cart.total_items} />
           </Route>
-          <Route path="/gallery" render={() => <Gallery />} exact/>
-          <Route path="/contact" render={() => <Contact />} exact/>
-          <Route path="/about" render={() => <About />} exact/>
+          <Route path="/gallery" render={() => <Gallery />} exact />
+          <Route path="/contact" render={() => <Contact />} exact />
+          <Route path="/about" render={() => <About />} exact />
           <Route path="/event" render={() => <Event />} exact />
           <Route exact path="/cart">
             <Cart
@@ -105,7 +110,14 @@ const App = () => {
             <Navbar totalItems={cart.total_items} />
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
+            <Checkout
+              cart={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              
+              error={errorMessage}
+              
+            />
             <Navbar totalItems={cart.total_items} />
           </Route>
         </Switch>
@@ -113,6 +125,5 @@ const App = () => {
     </Router>
   );
 };
-
 
 export default App;

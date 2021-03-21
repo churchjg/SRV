@@ -17,7 +17,6 @@ import FormInput from "./CustomTextField";
 import CustomSelectField from "./CustomSelectField";
 import {
   MuiPickersUtilsProvider,
-  KeyboardDatePicker,
 } from "@material-ui/pickers";
 import useStyles from "./styles";
 
@@ -121,7 +120,7 @@ const AddressForm = ({ checkoutToken, next }) => {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit((data) => next({ ...data }))}>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
               <FormInput name="firstName" label="First Name" />
               <FormInput name="lastName" label="Last Name" />
               <FormInput name="address1" label="Address" />

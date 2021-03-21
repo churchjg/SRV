@@ -21,12 +21,13 @@ import LockIcon from "@material-ui/icons/Lock";
 
 const steps = ["Shipping address", "Payment details"];
 
-const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
+const Checkout = ({ cart, order, onCaptureCheckout, error,}) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [shippingData, setShippingData] = useState({});
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [isFinished, setIsFinished] = useState(false);
+  const [liveCart, setLiveCart] = useState({});
   const history = useHistory();
 
   useEffect(() => {
@@ -36,6 +37,8 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
           type: "cart",
         });
         console.log(token);
+        var id = token.id
+        fetchLiveCart(token.id)
         setCheckoutToken(token);
       } catch (error) {
         if (activeStep !== steps.length) history.push("/");
@@ -57,6 +60,29 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     setTimeout(() => {
       setIsFinished(true);
     }, 3000);
+  };
+
+  const fetchLiveCart = async (checkoutTokenId) => {
+    var liveCart = await commerce.checkout.getLive(checkoutTokenId);
+    console.log(liveCart);
+    setLiveCart(liveCart);
+  };
+
+  const addDiscountCode = async (code, checkoutTokenId, e) => {
+    
+    await commerce.checkout.checkDiscount(checkoutTokenId, { code: code })
+      .then((response) =>
+        console.log(
+          response.valid,
+          response.type,
+          response.amount_saved.raw,
+          code,
+          checkoutTokenId
+        )
+      );
+     
+    fetchLiveCart(checkoutTokenId);
+    console.log(liveCart);
   };
 
   let Confirmation = () =>
@@ -114,7 +140,10 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         nextStep={nextStep}
         backStep={backStep}
         onCaptureCheckout={onCaptureCheckout}
+        fetchLiveCart={fetchLiveCart}
+        addDiscountCode={addDiscountCode}
         timeout={timeout}
+        liveCart={liveCart}
       />
     );
 
