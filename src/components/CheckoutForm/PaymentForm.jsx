@@ -101,6 +101,9 @@ const PaymentForm = ({
               }}
               onSubmit={methods.handleSubmit((data) =>
                 addDiscountCode("F@mily2021", checkoutToken.id)
+              )}
+              onSubmit={methods.handleSubmit((data) =>
+                addDiscountCode("Friend$2021", checkoutToken.id)
               )}>
               <Input id="code" placeholder="Discount Code" />
               <Button
