@@ -66,7 +66,7 @@ const PaymentForm = ({
           postal_zip_code: shippingData.zip,
           country: shippingData.shippingCountry,
         },
-        fulfillment: { shipping_method: shippingData.shippingOptions },
+        // fulfillment: { shipping_method: shippingData.shippingOptions },
         payment: {
           gateway: "stripe",
           stripe: {
@@ -100,11 +100,14 @@ const PaymentForm = ({
                 justifyContent: "flex-end",
               }}
               onSubmit={methods.handleSubmit((data) =>
-                addDiscountCode("F@mily2021", checkoutToken.id)
+                addDiscountCode(process.env.REACT_APP_DISCOUNT_CODE_FAMILY, checkoutToken.id)
               )}
-              onSubmit={methods.handleSubmit((data) =>
-                addDiscountCode("Friend$2021", checkoutToken.id)
-              )}>
+
+              // onSubmit={methods.handleSubmit((data) =>
+              //   addDiscountCode(process.env.REACT_APP_DISCOUNT_CODE_FRIENDS, checkoutToken.id)
+              // )}
+
+              >
               <Input id="code" placeholder="Discount Code" />
               <Button
                 type="submit"

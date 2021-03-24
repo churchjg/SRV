@@ -46,7 +46,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   const countryOptions = [{ name: "United States", value: "US" }];
 
-  const shippingOptions = [{ name: "Domestic ($3.00)", value: "Domestic" }];
+  // const shippingOptions = [{ name: "Domestic ($3.00)", value: "Domestic" }];
 
   // const shippingOptions = [
   //   { name: "Domestic", value: "Base Rate" },
@@ -155,13 +155,13 @@ const AddressForm = ({ checkoutToken, next }) => {
                 options={stateOptions}
                 defaultValue="Virginia"
               />
-              <CustomSelectField
+              {/* <CustomSelectField
                 required
                 name="shippingOptions"
                 label="Shipping Options"
                 options={shippingOptions}
                 defaultValue="Domestic"
-              />
+              /> */}
               {/* <CustomSelectField
               required
               name="shippingOption"
