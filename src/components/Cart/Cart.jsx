@@ -39,46 +39,7 @@ const Cart = ({
       </Grid>
 
       <div className={classes.cardDetails}>
-        {/* <Typography variant="h4">
-          Subtotal: {cart.subtotal.formatted_with_symbol}
-          <div className={classes.taxes}>
-            <Typography variant="subtitle1">
-              All prices include shipping, handling, and taxes.
-            </Typography>
-          </div>
-        </Typography>
-
-        <div>
-          <Button
-            component={Link}
-            to="/products"
-            className={classes.emptyButton}
-            size="large"
-            type="button"
-            variant="outlined"
-            color="inherit">
-            Back To Store
-          </Button>
-          <Button
-            className={classes.emptyButton}
-            size="large"
-            type="button"
-            variant="contained"
-            color="secondary"
-            onClick={handleEmptyCart}>
-            Empty Cart
-          </Button>
-          <Button
-            component={Link}
-            to="/checkout"
-            className={classes.checkoutButton}
-            size="large"
-            type="button"
-            variant="contained"
-            color="primary">
-            Checkout
-          </Button>
-        </div> */}
+        
       </div>
     </>
   );

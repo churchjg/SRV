@@ -16,7 +16,7 @@ const FormInput = ({ name, label }) => {
         name={name}
         label={label}
         required
-        // error={isError}
+        
       />
     </Grid>
   );

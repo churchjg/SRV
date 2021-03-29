@@ -8,9 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-import { Route, Redirect, Switch } from "react-router-dom";
 import "./contact.css"
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import contactCard24Regular from '@iconify-icons/fluent/contact-card-24-regular';
 
 
