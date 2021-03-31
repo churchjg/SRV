@@ -135,8 +135,16 @@ export default function Event() {
               color="textSecondary"
               paragraph
             >
+              We are currently not hosting any events. Please check back here in the future to see our offerings! 
+            </Typography> 
+            {/* <Typography
+              variant="h5"
+              align="center"
+              color="textSecondary"
+              paragraph
+            >
               Come visit us at Senedo Ridge Vineyard! We have plenty of events for everyone's taste. Check out what is happening now down below!
-            </Typography>
+            </Typography> */}
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
@@ -157,8 +165,8 @@ export default function Event() {
           </Container>
         </div>
 
-        <Container className={classes.cardGrid} maxWidth="100%">
-          {/* End hero unit */}
+        {/* <Container className={classes.cardGrid} maxWidth="100%">
+          
           <Grid container spacing={6}>
             <Grid item xs={12} sm={3} md={4}>
               <Card className={classes.card}>
@@ -341,7 +349,8 @@ export default function Event() {
             
             
           </Grid>
-        </Container>
+        </Container> */}
+
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
