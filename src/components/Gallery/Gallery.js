@@ -82,6 +82,38 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  modalImage: {
+    overlay: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(200, 200, 200, .75)",
+      },
+      content: {
+        position: "absolute",
+        top: 100,
+        left: 200,
+        right: 200,
+        bottom: 100,
+        border: "1px solid #ccc",
+        background: "#fff",
+        overflow: "auto",
+        WebkitOverflowScrolling: "touch",
+        borderRadius: "4px",
+        outline: "none",
+        padding: "20px",
+      },
+      [theme.breakpoints.up('lg')]: {
+        padding: theme.spacing(12),
+        paddingRight: 0,
+        width: "455%",
+        height: "5vh"
+       
+      },
+
+  }
 }));
 
 Modal.setAppElement("#root");
@@ -190,32 +222,35 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen}
                     onRequestClose={() => setModalIsOpen(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 200,
-                        right: 200,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 200,
+                    //     right: 200,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                        
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       id="Misty"
@@ -259,32 +294,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen1}
                     onRequestClose={() => setModalIsOpen1(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 200,
-                        right: 200,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 200,
+                    //     right: 200,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       id="Snow Day"
@@ -328,32 +365,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen2}
                     onRequestClose={() => setModalIsOpen3(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 200,
-                        right: 200,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 200,
+                    //     right: 200,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/KttNoOC.jpg"
@@ -396,32 +435,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen3}
                     onRequestClose={() => setModalIsOpen3(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 200,
-                        right: 200,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 200,
+                    //     right: 200,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/pNmdgcJ.jpg"
@@ -465,32 +506,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen4}
                     onRequestClose={() => setModalIsOpen4(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 200,
-                        right: 200,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 200,
+                    //     right: 200,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/zbx4Eu8.jpg"
@@ -533,32 +576,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen5}
                     onRequestClose={() => setModalIsOpen5(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 200,
-                        right: 200,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 200,
+                    //     right: 200,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/02dm8v7.jpg?1"
@@ -602,32 +647,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen6}
                     onRequestClose={() => setModalIsOpen6(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 100,
-                        right: 100,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 100,
+                    //     right: 100,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/rONa5Hu.jpg"
@@ -671,32 +718,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen7}
                     onRequestClose={() => setModalIsOpen7(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 100,
-                        right: 100,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 100,
+                    //     right: 100,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/scJC7w3.jpg?1"
@@ -739,32 +788,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen8}
                     onRequestClose={() => setModalIsOpen8(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 100,
-                        right: 100,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 100,
+                    //     right: 100,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/8RXtSh0.jpg?1"
@@ -808,32 +859,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen9}
                     onRequestClose={() => setModalIsOpen9(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 100,
-                        right: 100,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 100,
+                    //     right: 100,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/nV39lSf.jpg"
@@ -876,32 +929,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen10}
                     onRequestClose={() => setModalIsOpen10(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 100,
-                        right: 100,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 100,
+                    //     right: 100,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/yEMLAQA.jpg"
@@ -946,32 +1001,34 @@ export default function Gallery() {
                     View
                   </Button>
                   <Modal
+                  classname={classes.modalImage}
                     isOpen={modalIsOpen11}
                     onRequestClose={() => setModalIsOpen11(false)}
-                    style={{
-                      overlay: {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: "rgba(200, 200, 200, .75)",
-                      },
-                      content: {
-                        position: "absolute",
-                        top: 100,
-                        left: 100,
-                        right: 100,
-                        bottom: 100,
-                        border: "1px solid #ccc",
-                        background: "#fff",
-                        overflow: "auto",
-                        WebkitOverflowScrolling: "touch",
-                        borderRadius: "4px",
-                        outline: "none",
-                        padding: "20px",
-                      },
-                    }}>
+                    // style={{
+                    //   overlay: {
+                    //     position: "fixed",
+                    //     top: 0,
+                    //     left: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    //     backgroundColor: "rgba(200, 200, 200, .75)",
+                    //   },
+                    //   content: {
+                    //     position: "absolute",
+                    //     top: 100,
+                    //     left: 100,
+                    //     right: 100,
+                    //     bottom: 100,
+                    //     border: "1px solid #ccc",
+                    //     background: "#fff",
+                    //     overflow: "auto",
+                    //     WebkitOverflowScrolling: "touch",
+                    //     borderRadius: "4px",
+                    //     outline: "none",
+                    //     padding: "20px",
+                    //   },
+                    // }}
+                    >
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/fTjuTvG.jpg"
