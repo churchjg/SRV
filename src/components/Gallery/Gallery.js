@@ -71,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
 
   modalButton: {
     position: "absolute",
-    top: 5,
-    right: 5,
+    top: 35,
+    right: 30,
   },
 
   cardContent: {
@@ -90,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
         right: 0,
         bottom: 0,
         backgroundColor: "rgba(200, 200, 200, .75)",
+        
       },
       content: {
         position: "absolute",
@@ -104,13 +105,22 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "4px",
         outline: "none",
         padding: "20px",
+        [theme.breakpoints.up('xs')]: {
+            position: "relative",
+            padding: theme.spacing(12),
+            paddingRight: 0,
+            width: "855%",
+            height: "1vh"
+    
+          },
       },
-      [theme.breakpoints.up('lg')]: {
+      [theme.breakpoints.up('xs')]: {
+        position: "relative",
         padding: theme.spacing(12),
         paddingRight: 0,
-        width: "455%",
-        height: "5vh"
-       
+        width: "855%",
+        height: "1vh"
+
       },
 
   }
@@ -678,7 +688,7 @@ export default function Gallery() {
                     <CardMedia
                       className={classes.cardMedia1}
                       image="https://i.imgur.com/rONa5Hu.jpg"
-                  title="Turkey Season"
+                    title="Turkey Season"
                     />
                     <div className={classes.modalButton}>
                       <Button
