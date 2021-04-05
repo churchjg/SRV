@@ -11,7 +11,7 @@ Working with a client to build a website for a vineyard in the Shenandoah Valley
 * Stripe used for secure payment processing.
 * Deployed via AWS Amplify.
 
-## How It Was Done
+## For those that want to try it out
 To use please use a test card provided by Stripe.
 
 ###### Card Details:
