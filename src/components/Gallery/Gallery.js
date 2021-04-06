@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
   cardMedia1: {
     paddingTop: "56.25%", // 16:9
     overflow: "auto",
+    
   },
 
   modalButton: {
@@ -105,23 +106,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "4px",
         outline: "none",
         padding: "20px",
-        [theme.breakpoints.up('xs')]: {
-            position: "relative",
-            padding: theme.spacing(12),
-            paddingRight: 0,
-            width: "855%",
-            height: "1vh"
-    
-          },
+        
       },
-      [theme.breakpoints.up('xs')]: {
-        position: "relative",
-        padding: theme.spacing(12),
-        paddingRight: 0,
-        width: "855%",
-        height: "1vh"
-
-      },
+     
 
   }
 }));
@@ -502,7 +489,7 @@ export default function Gallery() {
                     Friend 2 — Fox
                   </Typography>
                   <Typography>
-                    This baby fox somehow breached our unbreachable defenses and
+                    This baby fox somehow breached our impenetrable defenses and
                     made it inside the fence. Hopefully he isn't as sly as
                     people say.
                   </Typography>
@@ -857,7 +844,7 @@ export default function Gallery() {
                   <Typography>
                     Here you can catch a glimpse of the Vineyard's owner, Jon
                     Church, threading trellis wire. He didn't even take a break
-                    duuring the thunderstorm seen passing behind him.
+                    during the thunderstorm seen passing behind him.
                   </Typography>
                 </CardContent>
                 <CardActions>

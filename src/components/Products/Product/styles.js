@@ -24,4 +24,13 @@ export default makeStyles(() => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  description: {
+    ['@media (max-width:1025px)']: { // eslint-disable-line no-useless-computed-key
+      width: '100%',
+      overflowWrap: "anywhere"
+      
+      // overflow: "auto",
+      // display: "block"
+    }
+  }
 }));
