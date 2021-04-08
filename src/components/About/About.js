@@ -146,7 +146,7 @@ export default function About() {
         <Container className={classes.cardGrid} maxWidth="100%">
           {/* End hero unit */}
           <Grid container spacing={6}>
-            <Grid item xs={12} sm={3} md={6}>
+            <Grid item xs={12} sm={12} md={6}>
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
@@ -162,7 +162,7 @@ export default function About() {
                 <CardActions></CardActions>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={3} md={6}>
+            <Grid item xs={12} sm={12} md={6}>
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}

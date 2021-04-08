@@ -27,7 +27,7 @@ const sections = [
 const mainFeaturedPost = {
   title: "Senedo Ridge Vineyard",
   description:
-    "Family Owned & Operated.",
+    "Family owned and operated.",
   image: "https://i.imgur.com/hRMV0G1.jpg",
   imgText: "main image description",
 //   linkText: "Browse Wines",
