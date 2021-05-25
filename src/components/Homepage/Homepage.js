@@ -16,18 +16,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 const sections = [
-  { title: "Home", Link: "/" },
+  // { title: "Home", Link: "/" },
   { title: "About Us", url: "/about" },
-  { title: "Contact Us", url: "/contact"},
-  { title: "Events", url: "/event" },
   { title: "Wine Shop", url: "/products" },
+  { title: "Events", url: "/event" },
   { title: "Gallery", url: "/gallery" },
+  { title: "Contact Us", url: "/contact"},
 ];
 
 const mainFeaturedPost = {
   title: "Senedo Ridge Vineyard",
   description:
-    "Family owned and operated.",
+    "Family owned and operated",
   image: "https://i.imgur.com/hRMV0G1.jpg",
   imgText: "main image description",
 //   linkText: "Browse Wines",
@@ -44,7 +44,7 @@ export default function Homepage({cart, totalItems}) {
       <CssBaseline />
 
       <Container maxWidth="100%">
-        <Header  title="Senedo Ridge Vineyard" sections={sections}  />
+        {<Header  title="Senedo Ridge Vineyard" sections={sections}   /> }
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
         </main>

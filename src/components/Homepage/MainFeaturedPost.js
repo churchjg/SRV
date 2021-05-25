@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-     
+   
+    
   },
   overlay: {
     position: 'absolute',
@@ -32,15 +33,17 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     position: 'relative',
-    padding: theme.spacing(6),
+    padding: theme.spacing(12),
     fontStyle: 'italic',
     fontFamily: 'Belluccia',
-    marginBottom: "250px",
-    [theme.breakpoints.up('lg')]: {
-      padding: theme.spacing(12),
+    marginBottom: "280px",
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(6),
       paddingRight: 0,
-      width: "405%",
-      height: "55vh"
+      width: "100vh",
+      height: "50vh",
+      
+      // marginBottom: "280px",
      
     },
   },
