@@ -32,13 +32,13 @@ height: "50px"
   },
   mobileMenu: {
     fontSize: "large",
-    align: "left",
+    align: "right",
     
   }
 });
 
 const MobileHeader = ({ navLinks }) => {
-  const [state, setState] = useState({ left: false });
+  const [state, setState] = useState({ right: false });
   const classes = useStyles();
   
 
@@ -79,15 +79,15 @@ const MobileHeader = ({ navLinks }) => {
       className={classes.hamburger}
         edge="start"
         aria-label="menu"
-        onClick={toggleDrawer("left", true)}>
+        onClick={toggleDrawer("right", true)}>
         <Menu className={classes.mobileMenu} />
       </IconButton>
       <Drawer
-        anchor="left"
-        open={state.left}
-        onOpen={toggleDrawer("left", true)}
-        onClose={toggleDrawer("left", false)}>
-        {sideDrawerList("left")}
+        anchor="right"
+        open={state.right}
+        onOpen={toggleDrawer("right", true)}
+        onClose={toggleDrawer("right", false)}>
+        {sideDrawerList("right")}
       </Drawer>
     </React.Fragment>
   );
