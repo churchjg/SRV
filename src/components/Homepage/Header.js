@@ -60,6 +60,8 @@ const useStyles = makeStyles((theme) => ({
   toolbarSecondary: {
     justifyContent: "space-between",
     overflowX: "auto",
+    marginTop: ".5%",
+    marginBottom: "-4%",
 
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
@@ -70,7 +72,8 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
-      margin: "0px",
+      margin: "10px",
+      
     },
   },
   toolbarLink: {
@@ -108,23 +111,6 @@ export default function Header(props, { totalItems }) {
   return (
     <React.Fragment>
       <CssBaseline />
-
-      <Hidden lgUp>
-          <MobileHeader navLinks={sections} className={classes.mobileMenu} />
-        </Hidden>
-      <Toolbar className={classes.toolbar}>
-        <Typography
-          component="h1"
-          variant="h1"
-          color="inherit"
-          align="center"
-          noWrap
-          className={classes.toolbarTitle}>
-          {title}
-        </Typography>
-        
-      </Toolbar>
-
       <Hidden mdDown>
         <Toolbar
           component="nav"
@@ -143,6 +129,41 @@ export default function Header(props, { totalItems }) {
           ))}
         </Toolbar>
       </Hidden>
+
+      <Hidden lgUp>
+          <MobileHeader navLinks={sections} className={classes.mobileMenu} />
+        </Hidden>
+      <Toolbar className={classes.toolbar}>
+        {/* <Typography
+          component="h1"
+          variant="h1"
+          color="inherit"
+          align="center"
+          noWrap
+          className={classes.toolbarTitle}>
+          {title}
+        </Typography> */}
+        
+      </Toolbar>
+
+      {/* <Hidden mdDown>
+        <Toolbar
+          component="nav"
+          variant="dense"
+          className={classes.toolbarSecondary}>
+          {sections.map((section) => (
+            <Link
+              color="inherit"
+              noWrap
+              key={section.title}
+              variant="h5"
+              href={section.url}
+              className={classes.toolbarLink}>
+              {section.title}
+            </Link>
+          ))}
+        </Toolbar>
+      </Hidden> */}
     </React.Fragment>
   );
 }

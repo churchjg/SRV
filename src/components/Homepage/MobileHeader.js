@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemText,
   Drawer,
+  Grid
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,34 +14,37 @@ import Link from "@material-ui/core/Link";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles({
-  
-hamburger: {
-marginTop: "12px",
-marginBottom: "-30px",
-height: "50px"
-},
+  hamburger: {
+    marginTop: "12px",
+    marginBottom: "-30px",
+    height: "50px",
+    // position: "absolute",
+    // right: 25,
+    // top: 5,
+  },
 
   list: {
-    width: 250,
+    width: 400,
+    
   },
   linkText: {
     textDecoration: `none`,
     textTransform: `uppercase`,
     color: `black`,
-    paddngTop: "800px",
-    
+    paddingTop: "800px",
+    fontSize: "300px",
   },
   mobileMenu: {
-    fontSize: "large",
-    align: "right",
-    
-  }
+    fontSize: "30px",
+    position: "absolute",
+    right: 25,
+    top: 20,
+  },
 });
 
 const MobileHeader = ({ navLinks }) => {
   const [state, setState] = useState({ right: false });
   const classes = useStyles();
-  
 
   const toggleDrawer = (link, open) => (event) => {
     if (
@@ -59,7 +63,7 @@ const MobileHeader = ({ navLinks }) => {
       onClick={toggleDrawer(link, false)}
       onKeyDown={toggleDrawer(link, false)}>
       <List component="nav">
-      {navLinks.map((section) => (
+        {navLinks.map((section) => (
           <a
             href={section.url}
             key={section.title}
@@ -75,13 +79,15 @@ const MobileHeader = ({ navLinks }) => {
 
   return (
     <React.Fragment>
+      <Grid container justify="flex-end" alignItems="flex-end">
       <IconButton
-      className={classes.hamburger}
+        className={classes.hamburger}
         edge="start"
         aria-label="menu"
         onClick={toggleDrawer("right", true)}>
         <Menu className={classes.mobileMenu} />
       </IconButton>
+      </Grid>
       <Drawer
         anchor="right"
         open={state.right}
