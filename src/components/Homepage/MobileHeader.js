@@ -13,34 +13,44 @@ import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 import PropTypes from "prop-types";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   hamburger: {
-    marginTop: "12px",
-    marginBottom: "-30px",
+    // marginTop: "7px",
+    // marginBottom: "-70px",
     height: "50px",
-    // position: "absolute",
-    // right: 25,
-    // top: 5,
+    marginBottom: "-52px",
+    zIndex: "2",
+    color: "white"
+    
   },
 
   list: {
     width: 400,
+    [theme.breakpoints.down("md")]: {
+      width: 400,
+    },
+    [theme.breakpoints.down("sm")]: {
+      
+      width: 250,
+    },
+    
     
   },
   linkText: {
     textDecoration: `none`,
     textTransform: `uppercase`,
     color: `black`,
-    paddingTop: "800px",
+    
     fontSize: "300px",
   },
   mobileMenu: {
     fontSize: "30px",
     position: "absolute",
     right: 25,
-    top: 20,
+    top: 10,
+    
   },
-});
+}))
 
 const MobileHeader = ({ navLinks }) => {
   const [state, setState] = useState({ right: false });
@@ -79,7 +89,7 @@ const MobileHeader = ({ navLinks }) => {
 
   return (
     <React.Fragment>
-      <Grid container justify="flex-end" alignItems="flex-end">
+      <Grid container justify="flex-end" alignItems="flex-end" >
       <IconButton
         className={classes.hamburger}
         edge="start"

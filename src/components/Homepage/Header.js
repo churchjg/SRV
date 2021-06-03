@@ -10,7 +10,10 @@ import MobileHeader from "./MobileHeader";
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `3px solid ${theme.palette.divider}`,
-    marginTop: "1%",
+    justifyContent: "space-between",
+    overflowX: "auto",
+    marginTop: ".5%",
+    
 
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
@@ -60,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   toolbarSecondary: {
     justifyContent: "space-between",
     overflowX: "auto",
-    marginTop: ".5%",
+    marginTop: "1%",
     marginBottom: "-4%",
 
     [theme.breakpoints.down("xs")]: {
@@ -79,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
   toolbarLink: {
     padding: theme.spacing(2),
     flexShrink: 0,
+    fontStyle: 'italic',
+    fontFamily: 'Belluccia',
+    fontWeight: "bold",
   },
   cartButton: {
     [theme.breakpoints.down("xs")]: {
@@ -115,7 +121,7 @@ export default function Header(props, { totalItems }) {
         <Toolbar
           component="nav"
           variant="dense"
-          className={classes.toolbarSecondary}>
+          className={classes.toolbar}>
           {sections.map((section) => (
             <Link
               color="inherit"
@@ -133,8 +139,8 @@ export default function Header(props, { totalItems }) {
       <Hidden lgUp>
           <MobileHeader navLinks={sections} className={classes.mobileMenu} />
         </Hidden>
-      <Toolbar className={classes.toolbar}>
-        {/* <Typography
+      {/* <Toolbar className={classes.toolbar}>
+        <Typography
           component="h1"
           variant="h1"
           color="inherit"
@@ -142,9 +148,9 @@ export default function Header(props, { totalItems }) {
           noWrap
           className={classes.toolbarTitle}>
           {title}
-        </Typography> */}
+        </Typography>
         
-      </Toolbar>
+      </Toolbar> */}
 
       {/* <Hidden mdDown>
         <Toolbar

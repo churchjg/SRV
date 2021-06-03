@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    
    
     
   },
@@ -36,12 +37,14 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(12),
     fontStyle: 'italic',
     fontFamily: 'Belluccia',
-    marginBottom: "280px",
+   
+    marginBottom: "35em",
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(6),
       paddingRight: 0,
       width: "100vh",
       height: "50vh",
+      marginBottom: "25em",
       
       // marginBottom: "280px",
      

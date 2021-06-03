@@ -5,11 +5,16 @@ import Container from "@material-ui/core/Container";
 import Header from "./Header.js";
 import MainFeaturedPost from "./MainFeaturedPost";
 import Footer from "./Footer";
+import MobileHeader from "./MobileHeader";
+import { Hidden } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
-  mainGrid: {
-    marginTop: theme.spacing(2),
+  mobileMenu: {
+    fontSize: "30px",
+    position: "absolute",
+    right: 25,
+    top: 10,
   },
   
 }));
@@ -37,14 +42,15 @@ const mainFeaturedPost = {
 
 
 export default function Homepage({cart, totalItems}) {
-  
+  const classes = useStyles();
 
   return (
     <React.Fragment>
       <CssBaseline />
 
       <Container maxWidth="100%">
-        {<Header  title="Senedo Ridge Vineyard" sections={sections}   /> }
+      
+        <Header  title="Senedo Ridge Vineyard" sections={sections}   /> 
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
         </main>
