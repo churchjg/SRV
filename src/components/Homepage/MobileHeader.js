@@ -44,10 +44,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "300px",
   },
   mobileMenu: {
-    fontSize: "30px",
+    fontSize: "55px",
     position: "absolute",
     right: 25,
-    top: 10,
+    top: 25,
     
   },
 }))
