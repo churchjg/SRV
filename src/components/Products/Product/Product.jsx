@@ -5,6 +5,7 @@ import {
   CardContent,
   CardActions,
   Typography,
+  Box,
   IconButton,
 } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
@@ -39,11 +40,14 @@ const Product = ({ product, onAddToCart }) => {
         />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton
+      <Box variant="subtitle1" fontStyle="italic" gutterBottom>
+        Currently Unavailable
+      </Box>
+        {/* <IconButton
           aria-label="Add to Cart"
           onClick={() => onAddToCart(product.id, 1)}>
           <AddShoppingCart />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
     </Card>
   );
